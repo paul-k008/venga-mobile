@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream:         #F7F2E7;
+  --cream-2:       #F1EADB;
+  --cream-3:       #EBE2CC;
+
+  --ink:           #0E1116;
+  --ink-70:        rgba(14,17,22,0.70);
+  --ink-40:        rgba(14,17,22,0.40);
+  --hair:          rgba(14,17,22,0.08);
+
+  --orange:        #FF5B00;
+  --orange-deep:   #E04E00;   /* press state for orange CTAs (iter 7) */
+  --orange-soft:   #FFE8DC;
+  --mint:          #9FE7C7;
+  --mint-deep:     #1E9C6B;
+  --red:           #E53935;
+  --red-tint:      rgba(229,57,53,0.10);
+  --sky:           #7DB8FF;
+  --yellow:        #F4C542;
+  --lime:          #C8F44B;
+
+  --blob-blue:     #AFC6F0;
+  --blob-mint:     #8EE3B7;
+  --blob-yellow:   #F2D24B;
+}
+
+html, body {
+  background-color: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Suppress iOS Safari's gray tap-highlight box; we provide our own :active styles. */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Keyboard focus ring — only on tab focus, not on touch/click. */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Skip-to-content link for keyboard users. Hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -200px;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.skip-link:focus { top: 8px; }
+
+.font-display {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.font-body {
+  font-family: var(--font-geist-sans), sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-nums {
+  font-family: var(--font-geist-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* hide horizontal scrollbars on filter chip rows */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Dynamic viewport units — accounts for the iOS Safari URL bar. */
+.h-screen-d     { height: 100vh; height: 100dvh; }
+.min-h-screen-d { min-height: 100vh; min-height: 100dvh; }
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--cream-3) 0%,
+    var(--cream-2) 50%,
+    var(--cream-3) 100%
+  );
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.4s linear infinite;
+}
+
+/* Reduced-motion: neutralize all transitions/animations but keep layout intact. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton-shimmer { background: var(--cream-3) !important; animation: none !important; }
+}
+
+/* Inputs: 16px minimum on iOS to prevent focus-zoom. */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+textarea {
+  font-size: 16px;
+}

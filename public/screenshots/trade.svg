@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+  <defs>
+    <linearGradient id="bg-trade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7F2E7"/>
+      <stop offset="100%" stop-color="#F1EADB"/>
+    </linearGradient>
+  </defs>
+  <rect width="390" height="844" fill="url(#bg-trade)" rx="32"/>
+  <rect x="120" y="14" width="150" height="32" rx="16" fill="#0E1116" opacity="0.85"/>
+  <rect x="20" y="68" width="350" height="180" rx="20" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="20" y="68" width="350" height="180" rx="20" fill="none" stroke="#7DB8FF" stroke-width="3"/>
+  <text x="195" y="160" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="22" font-weight="800" fill="#0E1116" letter-spacing="-0.5">VENGA · TRADE</text>
+  <text x="195" y="190" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="rgba(14,17,22,0.7)">prototype screenshot placeholder</text>
+  <rect x="20" y="280" width="350" height="80" rx="14" fill="#F1EADB"/>
+  <rect x="20" y="372" width="350" height="80" rx="14" fill="#F1EADB"/>
+  <rect x="20" y="464" width="350" height="80" rx="14" fill="#F1EADB"/>
+  <rect x="20" y="556" width="350" height="80" rx="14" fill="#F1EADB"/>
+  <rect x="20" y="780" width="350" height="56" rx="28" fill="#FFFFFF" opacity="0.7"/>
+</svg>
