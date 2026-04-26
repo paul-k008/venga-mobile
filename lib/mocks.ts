@@ -143,7 +143,7 @@ export const ASSET_NETWORKS: Record<
 
 export function generateMockAddress(symbol: string): string {
   const fmt = ASSET_NETWORKS[symbol]?.addressFormat ?? "evm";
-  if (fmt === "evm")     return "0xc304fefd68f9f290dc589f4b17171ed7ca0afec5";
+  if (fmt === "evm")     return "0xD111fefd68f9f290dc589f4b17171ed7ca0fff3";
   if (fmt === "bitcoin") return "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq";
   if (fmt === "tron")    return "TXYZopBVpHVgUqg4dkf8kCfsiKMU8nYFRk";
   return "";
@@ -373,7 +373,7 @@ export type WhitelistedAddress = {
 };
 export const WHITELISTED_ADDRESSES: WhitelistedAddress[] = [
   { id: "w1", label: "My Ledger BTC",  symbol: "BTC",  address: "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq" },
-  { id: "w2", label: "Hardware ETH",   symbol: "ETH",  address: "0xc304fefd68f9f290dc589f4b17171ed7ca0afec5" },
+  { id: "w2", label: "Hardware ETH",   symbol: "ETH",  address: "0xD111fefd68f9f290dc589f4b17171ed7ca0fff3" },
   { id: "w3", label: "Coinbase USDC",  symbol: "USDC", address: "0x3a8f2e1f8c9bda0e5c711a7634d9ad97c4b21ef5" },
 ];
 
